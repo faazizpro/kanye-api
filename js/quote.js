@@ -1,7 +1,11 @@
 const loadQuote = () => {
     fetch('https://api.kanye.rest/')
     .then(res => res.json())
-    .then(data => console.log(data));
+    .then(data => displayQuote(data));
 }
 
-loadQuote();
+function displayQuote(quotes){
+    const blockQuote = document.getElementById('quote');
+    blockQuote.innerText = quotes.quote;
+    console.log(quotes.quote);
+} 
